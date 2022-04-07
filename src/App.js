@@ -17,7 +17,7 @@ export const App = ({ user, themeConfigs }) => {
             alt={user.username}
           />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 overflow-y-auto backdrop-blur-2xl bg-white/30">
+        <div className="absolute bottom-0 left-0 right-0 overflow-y-auto backdrop-blur-2xl bg-white/30 top-0">
           <div className="relative z-10 flex flex-col h-full text-stone-700">
             <div>
               <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
