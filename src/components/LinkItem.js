@@ -1,7 +1,7 @@
 import React from "react";
 import LinkItemIcon from "./LinkItemIcon";
 
-const LinkItem = ({ link, onClick }) => {
+const LinkItem = ({ link, onClick, Icons }) => {
   const { title, link: url, host, is_published, host_key } = link;
 
   const iconColors = {
@@ -29,13 +29,13 @@ const LinkItem = ({ link, onClick }) => {
           isAlwaysShow
           className={`${iconColors[host_key] || iconColors.default} opacity-70`}
         >
-          F
+          <Icons hostname={host_key} size={24} />
         </LinkItemIcon>
         <div className="flex-1 px-4 font-semibold text-center">
           {title || host}
         </div>
         <LinkItemIcon invisible isAlwaysShow>
-          F
+          <Icons hostname={host_key} size={24} />
         </LinkItemIcon>
       </a>
     </React.Fragment>
