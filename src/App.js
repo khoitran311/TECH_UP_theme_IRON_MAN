@@ -18,7 +18,7 @@ export const App = ({ user, themeConfigs }) => {
             alt={user.username}
           />
         </div>
-        <div className="relative h-full overflow-y-auto backdrop-blur-2xl bg-white/30">
+        <div className="relative min-h-full backdrop-blur-2xl bg-white/30">
           <div className="relative z-10 flex flex-col h-full text-stone-700">
             <div>
               <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
@@ -53,11 +53,7 @@ export const App = ({ user, themeConfigs }) => {
               </div>
               <div className="flex-1 px-4 mt-8 md:mt-12 md:px-0">
                 {userLinks.map(link => (
-                  <LinkItem
-                    // theme={theme}
-                    key={link.uuid}
-                    link={link}
-                  />
+                  <LinkItem key={link.uuid} link={link} />
                 ))}
               </div>
               {/* <div className="mt-10">
