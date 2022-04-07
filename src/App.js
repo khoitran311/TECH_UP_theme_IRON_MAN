@@ -5,7 +5,7 @@ export const App = ({ user, themeConfigs }) => {
 
   return (
     <React.Fragment>
-      <div className="relative h-screen pt-20">
+      <div className="relative w-full h-full">
         <div className="w-full h-full">
           <img
             src={
