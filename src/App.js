@@ -56,19 +56,18 @@ export const App = ({ user, themeConfigs, Icons }) => {
                   <LinkItem key={link.uuid} link={link} Icons={Icons} />
                 ))}
               </div>
-              {/* <div className="mt-10">
-                <Socials socials={user.socials} />
-              </div> */}
             </div>
             <div className="flex flex-col items-center w-full pb-10 mx-auto mt-auto">
-              <div className="mb-1 text-sm font-semibold">Powered By</div>
-              <img
-                src={themeConfigs.linkstar_logo}
-                alt="LinkStar"
-                className="h-10"
-              />
-              <div className="mt-1 text-sm font-semibold">
-                © LinkStar. All rights reserved.
+              <div className="mt-10">
+                <div className="mb-1 text-sm font-semibold">Powered By</div>
+                <img
+                  src={themeConfigs.linkstar_logo}
+                  alt="LinkStar"
+                  className="h-10"
+                />
+                <div className="mt-1 text-sm font-semibold">
+                  © LinkStar. All rights reserved.
+                </div>
               </div>
             </div>
           </div>
