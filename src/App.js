@@ -1,7 +1,12 @@
 import React from "react";
 import LinkItem from "./components/LinkItem";
 
-export const App = ({ user, themeConfigs, Icons }) => {
+export const App = ({
+  user,
+  themeConfigs,
+  icons: LinkStarIcons,
+  onClickLink
+}) => {
   const userLinks = user.user_links;
 
   return (
@@ -53,7 +58,12 @@ export const App = ({ user, themeConfigs, Icons }) => {
               </div>
               <div className="flex-1 px-4 mt-8 md:mt-12 md:px-0">
                 {userLinks.map(link => (
-                  <LinkItem key={link.uuid} link={link} Icons={Icons} />
+                  <LinkItem
+                    key={link.uuid}
+                    link={link}
+                    icons={LinkStarIcons}
+                    onClickLink={onClickLink}
+                  />
                 ))}
               </div>
             </div>
