@@ -58,7 +58,7 @@ export const App = ({ user, themeConfigs, Icons }) => {
               </div>
             </div>
             <div className="mx-auto mt-auto">
-              <div className="flex flex-col items-center w-full pb-10 mx-auto">
+              <div className="flex flex-col items-center w-full pb-10 mx-auto mt-6">
                 <div className="mb-1 text-sm font-semibold">Powered By</div>
                 <img
                   src={themeConfigs.linkstar_logo}
