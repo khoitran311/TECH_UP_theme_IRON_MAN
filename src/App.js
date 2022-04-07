@@ -15,6 +15,7 @@ export const App = ({
         <div className="absolute w-full h-full">
           <img
             src={
+              themeConfigs.cover ||
               user.cover_img_absolute ||
               user.avatar_img_absolute ||
               themeConfigs.default_avatar
@@ -28,7 +29,7 @@ export const App = ({
             <div>
               <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
                 <img
-                  src={user.cover_img_absolute}
+                  src={user.cover_img_absolute || themeConfigs.default_cover}
                   alt={`${user.username}'s cover`}
                   className="object-cover object-center w-full h-full bg-gray-100 shadow-md rounded-b-2xl shadow-black/10"
                 />
