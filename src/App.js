@@ -1,4 +1,5 @@
 import React from "react";
+import LinkItem from "./components/LinkItem";
 
 export const App = ({ user, themeConfigs }) => {
   const userLinks = user.user_links;
@@ -51,14 +52,13 @@ export const App = ({ user, themeConfigs }) => {
                 </div>
               </div>
               <div className="flex-1 px-4 mt-8 md:mt-12 md:px-0">
-                {/* {userLinks.map(link => (
+                {userLinks.map(link => (
                   <LinkItem
-                    theme={theme}
+                    // theme={theme}
                     key={link.uuid}
                     link={link}
-                    onClick={onClickLink}
                   />
-                ))} */}
+                ))}
               </div>
               {/* <div className="mt-10">
                 <Socials socials={user.socials} />
