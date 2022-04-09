@@ -24,7 +24,7 @@ export const App = ({
             alt={user.username}
           />
         </div>
-        <div className="relative min-h-full backdrop-blur-2xl bg-white/30">
+        <div className="relative min-h-full grid backdrop-blur-2xl bg-white/30">
           <div className="relative z-10 flex flex-col h-full text-stone-700">
             <div>
               <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
