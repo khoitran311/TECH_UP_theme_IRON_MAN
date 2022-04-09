@@ -27,12 +27,40 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "src"),
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    }
+                  ]
+                ]
+              }
+            }
+          }
+        ]
       }
     ]
   },
   resolve: {
     alias: {
       "remote-component.config.js": path.resolve("./remote-component.config.js")
+    },
+    fallback: {
+      https: require.resolve("https-browserify"),
+      http: require.resolve("stream-http"),
+      buffer: require.resolve("buffer/")
     }
   }
 };

@@ -5,6 +5,7 @@
  *  - dist/webpack-bundle-analyzer-report.html
  */
 const webpack = require("webpack");
+const path = require("path");
 const WebpackAssetsManifest = require("webpack-assets-manifest");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const remoteComponentConfig = require("./remote-component.config").resolve;
@@ -15,6 +16,12 @@ const externals = Object.keys(remoteComponentConfig).reduce(
 );
 
 module.exports = {
+  resolve: {
+    fallback: {
+      https: require.resolve("https-browserify"),
+      http: require.resolve("stream-http")
+    }
+  },
   plugins: [
     new webpack.EnvironmentPlugin({
       "process.env.NODE_ENV": process.env.NODE_ENV
@@ -44,6 +51,29 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, "src"),
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    }
+                  ]
+                ]
+              }
+            }
+          }
+        ]
       }
     ]
   }

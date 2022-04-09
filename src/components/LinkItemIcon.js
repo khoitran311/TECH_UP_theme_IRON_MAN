@@ -1,6 +1,6 @@
 import React from "react";
 
-const Icon = ({
+const LinkItemIcon = ({
   children,
   invisible = false,
   isAlwaysShow = false,
@@ -28,4 +28,4 @@ const Icon = ({
   );
 };
 
-export default Icon;
+export default LinkItemIcon;
