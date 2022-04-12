@@ -65,7 +65,7 @@ export const App = ({
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex-1 px-4 mt-8 md:mt-12 md:px-0">
+                                <div className="flex-1 px-4 mt-10 md:mt-16 md:px-0">
                                     {userLinks.map(link => (
                                         <LinkItem
                                             key={link.uuid}
