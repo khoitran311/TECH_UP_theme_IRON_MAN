@@ -52,6 +52,7 @@
     "https-browserify": "^1.0.0",
     "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
+    "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.4.3",
     "prettier": "^2.2.1",
     "react-dom": "^16.14.0",
