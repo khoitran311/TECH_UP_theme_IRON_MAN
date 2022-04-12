@@ -11,70 +11,70 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const remoteComponentConfig = require("./remote-component.config").resolve;
 
 const externals = Object.keys(remoteComponentConfig).reduce(
-  (obj, key) => ({ ...obj, [key]: key }),
-  {}
+    (obj, key) => ({ ...obj, [key]: key }),
+    {}
 );
 
 module.exports = {
-  resolve: {
-    fallback: {
-      https: require.resolve("https-browserify"),
-      http: require.resolve("stream-http")
-    }
-  },
-  plugins: [
-    new webpack.EnvironmentPlugin({
-      "process.env.NODE_ENV": process.env.NODE_ENV
-    }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-      openAnalyzer: false,
-      reportFilename: "webpack-bundle-analyzer-report.html"
-    }),
-    new WebpackAssetsManifest()
-  ],
-  entry: {
-    main: "./src/index.js"
-  },
-  output: {
-    libraryTarget: "commonjs"
-  },
-  externals: {
-    ...externals,
-    "remote-component.config.js": "remote-component.config.js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader"
+    resolve: {
+        fallback: {
+            https: require.resolve("https-browserify"),
+            http: require.resolve("stream-http")
         }
-      },
-      {
-        test: /\.css$/i,
-        include: path.resolve(__dirname, "src"),
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
+    },
+    plugins: [
+        new webpack.EnvironmentPlugin({
+            "process.env.NODE_ENV": process.env.NODE_ENV
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            openAnalyzer: false,
+            reportFilename: "webpack-bundle-analyzer-report.html"
+        }),
+        new WebpackAssetsManifest()
+    ],
+    entry: {
+        main: "./src/index.js"
+    },
+    output: {
+        libraryTarget: "commonjs"
+    },
+    externals: {
+        ...externals,
+        "remote-component.config.js": "remote-component.config.js"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.css$/i,
+                include: path.resolve(__dirname, "src"),
+                use: [
+                    "style-loader",
+                    "css-loader",
                     {
-                      // Options
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "postcss-preset-env",
+                                        {
+                                            // Options
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
                     }
-                  ]
                 ]
-              }
             }
-          }
         ]
-      }
-    ]
-  }
+    }
 };

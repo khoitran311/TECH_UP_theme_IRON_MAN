@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  resolve: {
-    react: require("react")
-  }
+    resolve: {
+        react: require("react")
+    }
 };

@@ -8,59 +8,61 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  plugins: [
-    new webpack.EnvironmentPlugin({
-      "process.env.NODE_ENV": process.env.NODE_ENV
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html"
-    })
-  ],
-  entry: {
-    demo: "./src/webpack-dev-server.js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.css$/i,
-        include: path.resolve(__dirname, "src"),
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    }
-                  ]
-                ]
-              }
-            }
-          }
-        ]
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-      "remote-component.config.js": path.resolve("./remote-component.config.js")
+    plugins: [
+        new webpack.EnvironmentPlugin({
+            "process.env.NODE_ENV": process.env.NODE_ENV
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
+        })
+    ],
+    entry: {
+        demo: "./src/webpack-dev-server.js"
     },
-    fallback: {
-      https: require.resolve("https-browserify"),
-      http: require.resolve("stream-http"),
-      buffer: require.resolve("buffer/")
+    module: {
+        rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.css$/i,
+                include: path.resolve(__dirname, "src"),
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "postcss-preset-env",
+                                        {
+                                            // Options
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    resolve: {
+        alias: {
+            "remote-component.config.js": path.resolve(
+                "./remote-component.config.js"
+            )
+        },
+        fallback: {
+            https: require.resolve("https-browserify"),
+            http: require.resolve("stream-http"),
+            buffer: require.resolve("buffer/")
+        }
     }
-  }
 };
