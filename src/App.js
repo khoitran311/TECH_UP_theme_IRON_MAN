@@ -37,7 +37,7 @@ export const App = ({
                     />
                   </div>
                 ) : (
-                  <div className="h-40"></div>
+                  <div className="h-32"></div>
                 )}
               </div>
               <div className="w-full max-w-screen-sm mx-auto mb-6 -mt-14 md:-mt-[3.75rem]">
