@@ -28,13 +28,17 @@ export const App = ({
           <div className="relative grid min-h-full backdrop-blur-2xl bg-white/30">
             <div className="relative z-10 flex flex-col h-full text-stone-700">
               <div>
-                <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
-                  <img
-                    src={user.cover_img_absolute || themeConfigs.default_cover}
-                    alt={`${user.username}'s cover`}
-                    className="object-cover object-center w-full h-full bg-gray-100 shadow-md rounded-b-2xl shadow-black/10"
-                  />
-                </div>
+                {user.cover_img_absolute ? (
+                  <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
+                    <img
+                      src={user.cover_img_absolute}
+                      alt={`${user.username}'s cover`}
+                      className="object-cover object-center w-full h-full bg-gray-100 shadow-md rounded-b-2xl shadow-black/10"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-20"></div>
+                )}
               </div>
               <div className="w-full max-w-screen-sm mx-auto mb-6 -mt-14 md:-mt-[3.75rem]">
                 <div className="mt-2.5 sm:mt-1 rounded-3xl md:mt-0">
