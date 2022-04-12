@@ -77,7 +77,7 @@ export const App = ({
                                 </div>
                             </div>
                             <div className="mx-auto mt-auto">
-                                <div className="flex flex-col items-center w-full pb-6 mx-auto mt-6">
+                                <div className="flex flex-col items-center w-full pb-8 mx-auto mt-6">
                                     <div className="mb-1 text-sm font-semibold">
                                         Powered By
                                     </div>
