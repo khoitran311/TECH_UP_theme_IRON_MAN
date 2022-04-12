@@ -10,7 +10,13 @@ module.exports = {
     postCSSNested,
     autoprefixer,
     prefixer({
-      prefix: ".linkstar"
+      prefix: ".linkstar",
+      transform: (prefix, selector, prefixedSelector) => {
+        if (selector === ".linkstar") {
+          return ".linkstar";
+        }
+        return prefixedSelector;
+      }
     })
   ]
 };
