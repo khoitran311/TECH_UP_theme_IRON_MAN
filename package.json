@@ -19,6 +19,7 @@
         "lint": "eslint ."
     },
     "dependencies": {
+        "husky": "^7.0.4",
         "react": "^16.14.0"
     },
     "devDependencies": {
@@ -73,8 +74,7 @@
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "pre-commit": "npm run lint && npm run build && npm run test:changed",
-            "pre-push": "npm run test:coverage"
+            "pre-commit": "npm run lint && npm run build"
         }
     },
     "config": {
