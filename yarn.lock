@@ -5344,6 +5344,11 @@ postcss-place@^7.0.4:
   dependencies:
     postcss-value-parser "^4.2.0"
 
+postcss-prefix-selector@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/postcss-prefix-selector/-/postcss-prefix-selector-1.15.0.tgz#b35f63d414954e59d9331071c6a3bb17369ee7bf"
+  integrity sha512-9taaTPs6I4906QC03zBBt0LfTWAhrqEWlKSj0jRlxrg1yV+O91h0wcquu6krcA5L6aEv3QnCeG8B1vZ5WT4ecQ==
+
 postcss-preset-env@^7.4.3:
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/postcss-preset-env/-/postcss-preset-env-7.4.3.tgz#fb1c8b4cb405da042da0ddb8c5eda7842c08a449"
