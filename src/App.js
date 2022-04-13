@@ -3,16 +3,12 @@ import LinkItem from "./components/LinkItem";
 import exampleThemeConfigs from "./data/theme_configs.data";
 import exampleUserData from "./data/user.data";
 
-export const App = ({ user: userData = exampleUserData, themeConfigs = exampleThemeConfigs, icons, onClickLink }) => {
-    const [LinkStarIcons, setLinkStarIcons] = React.useState(icons);
-
-    // useEffect(() => {
-    //     if (!icons) {
-    //         const data = lazy(() => import("./components/LinkStarIcons"));
-    //         setLinkStarIcons(data);
-    //     }
-    // }, [icons]);
-
+export const App = ({
+    user: userData = exampleUserData,
+    themeConfigs = exampleThemeConfigs,
+    icons: LinkStarIcons,
+    onClickLink
+}) => {
     return (
         <React.Fragment>
             <Suspense fallback={<div>Loading...</div>}>
