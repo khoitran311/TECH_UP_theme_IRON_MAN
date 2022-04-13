@@ -6,6 +6,12 @@ const LinkItem = ({ link, icons: LinkStarIcons, onClickLink }) => {
 
     const iconColors = {
         facebook: "text-blue-600 border-blue-600",
+        youtube: "text-red-600 border-red-600",
+        twitter: "text-blue-500 border-blue-500",
+        instagram: "text-red-600 border-red-600",
+        linkedin: "text-blue-600 border-blue-600",
+        soundcloud: "text-red-600 border-red-600",
+        telegram: "text-blue-600 border-blue-600",
         default: "text-zinc-800 border-zinc-800"
     };
 
