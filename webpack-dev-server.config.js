@@ -5,6 +5,7 @@ const config = require("./webpack.config");
 
 module.exports = {
     entry: "./src/webpack-dev-server.js",
+    mode: "development",
     plugins: [
         ...config[0].plugins,
         new HtmlWebpackPlugin({
@@ -14,13 +15,14 @@ module.exports = {
         new webpack.EnvironmentPlugin({
             "process.env.NODE_ENV": process.env.NODE_ENV
         }),
-        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
     module: config[0].module,
     devServer: {
         hot: true,
-        contentBase: __dirname,
+        static: {
+            directory: path.join(__dirname, "dist")
+        },
         headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods":
@@ -29,11 +31,5 @@ module.exports = {
                 "X-Requested-With, content-type, Authorization"
         }
     },
-    resolve: {
-        alias: {
-            "remote-component.config.js": path.resolve(
-                "./remote-component.config.js"
-            )
-        }
-    }
+    resolve: config[0].resolve
 };

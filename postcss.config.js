@@ -11,7 +11,10 @@ module.exports = {
         autoprefixer,
         prefixer({
             prefix: ".linkstar",
-            transform: (prefix, selector, prefixedSelector) => {
+            transform: (_prefix, selector, prefixedSelector) => {
+                if (process.env.NODE_ENV === "development") {
+                    return selector;
+                }
                 if (selector === ".linkstar") {
                     return ".linkstar";
                 }

@@ -17,9 +17,16 @@ const externals = Object.keys(remoteComponentConfig).reduce(
 
 module.exports = {
     resolve: {
+        alias: {
+            "remote-component.config.js": path.resolve(
+                "./remote-component.config.js"
+            )
+        },
         fallback: {
             https: require.resolve("https-browserify"),
-            http: require.resolve("stream-http")
+            http: require.resolve("stream-http"),
+            buffer: require.resolve("buffer/"),
+            url: require.resolve("url/")
         }
     },
     plugins: [
