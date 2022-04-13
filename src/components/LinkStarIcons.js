@@ -7,7 +7,7 @@ import { RiSoundcloudLine, RiTelegramLine } from "react-icons/ri";
 
 const LinkStarIcons = props => {
     if (!props) {
-        return <>LinkStarIcons</>;
+        return <div>LinkStarIcons</div>;
     }
     const { hostname, children, ...otherProps } = props;
     const icons = {
