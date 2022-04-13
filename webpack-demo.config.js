@@ -66,7 +66,8 @@ module.exports = {
         fallback: {
             https: require.resolve("https-browserify"),
             http: require.resolve("stream-http"),
-            buffer: require.resolve("buffer/")
+            buffer: require.resolve("buffer/"),
+            url: require.resolve("url/")
         }
     }
 };
