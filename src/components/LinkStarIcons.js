@@ -1,14 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { AiOutlineWhatsApp } from "react-icons/ai";
-import {
-    FiFacebook,
-    FiInstagram,
-    FiLinkedin,
-    FiMail,
-    FiTwitter,
-    FiYoutube
-} from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiLinkedin, FiMail, FiTwitter, FiYoutube } from "react-icons/fi";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { RiSoundcloudLine, RiTelegramLine } from "react-icons/ri";
 
@@ -26,11 +19,7 @@ const LinkStarIcons = ({ hostname, children, ...anotherProps }) => {
         default: <HiOutlineGlobeAlt />
     };
 
-    return React.cloneElement(
-        icons[hostname] || icons["default"],
-        { ...anotherProps },
-        children
-    );
+    return React.cloneElement(icons[hostname] || icons["default"], { ...anotherProps }, children);
 };
 
 LinkStarIcons.propTypes = {

@@ -83,8 +83,7 @@ module.exports = {
 
 ```javascript
 // different paths for localhost vs s3
-const url =
-    global.location.hostname === "localhost" ? "/dist/main.js" : "main.js";
+const url = global.location.hostname === "localhost" ? "/dist/main.js" : "main.js";
 ```
 
 ## External Dependencies

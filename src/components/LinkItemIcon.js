@@ -1,12 +1,6 @@
 import React from "react";
 
-const LinkItemIcon = ({
-    children,
-    invisible = false,
-    isAlwaysShow = false,
-    className,
-    style
-}) => {
+const LinkItemIcon = ({ children, invisible = false, isAlwaysShow = false, className, style }) => {
     let widthClassName = "w-10 md:w-12";
     const invisibleClassName = invisible ? "invisible" : "";
 

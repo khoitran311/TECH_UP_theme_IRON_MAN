@@ -1,26 +1,8 @@
 module.exports = {
-    list: [
-        "test",
-        "feat",
-        "fix",
-        "chore",
-        "docs",
-        "refactor",
-        "style",
-        "ci",
-        "perf"
-    ],
+    list: ["test", "feat", "fix", "chore", "docs", "refactor", "style", "ci", "perf"],
     maxMessageLength: 64,
     minMessageLength: 3,
-    questions: [
-        "type",
-        "scope",
-        "subject",
-        "body",
-        "breaking",
-        "issues",
-        "lerna"
-    ],
+    questions: ["type", "scope", "subject", "body", "breaking", "issues", "lerna"],
     scopes: [],
     types: {
         chore: {
@@ -54,8 +36,7 @@ module.exports = {
             value: "perf"
         },
         refactor: {
-            description:
-                "A code change that neither fixes a bug or adds a feature",
+            description: "A code change that neither fixes a bug or adds a feature",
             emoji: "💡",
             value: "refactor"
         },
@@ -65,8 +46,7 @@ module.exports = {
             value: "release"
         },
         style: {
-            description:
-                "Markup, white-space, formatting, missing semi-colons...",
+            description: "Markup, white-space, formatting, missing semi-colons...",
             emoji: "🎨",
             value: "style"
         },

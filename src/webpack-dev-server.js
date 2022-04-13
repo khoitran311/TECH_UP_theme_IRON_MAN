@@ -8,8 +8,7 @@ import ReactDOM from "react-dom";
 import LocalComponent from "./index.js";
 
 // different paths for localhost vs s3
-const url =
-    process.env.NODE_ENV === "development" ? "/dist/main.js" : "main.js";
+const url = process.env.NODE_ENV === "development" ? "/dist/main.js" : "main.js";
 
 const node = document.getElementById("app");
 

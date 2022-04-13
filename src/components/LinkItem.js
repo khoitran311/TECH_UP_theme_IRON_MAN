@@ -31,17 +31,10 @@ const LinkItem = ({ link, icons: LinkStarIcons, onClickLink }) => {
                 } shadow-md`}
                 onClick={handleClick}
             >
-                <LinkItemIcon
-                    isAlwaysShow
-                    className={`${
-                        iconColors[host_key] || iconColors.default
-                    } opacity-70`}
-                >
+                <LinkItemIcon isAlwaysShow className={`${iconColors[host_key] || iconColors.default} opacity-70`}>
                     <LinkStarIcons hostname={host_key} size={24} />
                 </LinkItemIcon>
-                <div className="flex-1 px-4 font-semibold text-center">
-                    {title || host}
-                </div>
+                <div className="flex-1 px-4 font-semibold text-center">{title || host}</div>
                 <LinkItemIcon invisible isAlwaysShow>
                     <LinkStarIcons hostname={host_key} size={24} />
                 </LinkItemIcon>

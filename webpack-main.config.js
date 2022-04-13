@@ -10,17 +10,12 @@ const WebpackAssetsManifest = require("webpack-assets-manifest");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const remoteComponentConfig = require("./remote-component.config").resolve;
 
-const externals = Object.keys(remoteComponentConfig).reduce(
-    (obj, key) => ({ ...obj, [key]: key }),
-    {}
-);
+const externals = Object.keys(remoteComponentConfig).reduce((obj, key) => ({ ...obj, [key]: key }), {});
 
 module.exports = {
     resolve: {
         alias: {
-            "remote-component.config.js": path.resolve(
-                "./remote-component.config.js"
-            )
+            "remote-component.config.js": path.resolve("./remote-component.config.js")
         },
         fallback: {
             https: require.resolve("https-browserify"),
