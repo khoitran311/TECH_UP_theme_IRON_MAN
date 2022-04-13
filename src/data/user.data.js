@@ -24,6 +24,16 @@ const userData = {
             user_uuid: 1,
             priority: 0,
             is_published: false
+        },
+        {
+            uuid: 3,
+            link: "https://www.instagram.com/linkstar",
+            host: "www.instagram.com",
+            host_key: "instagram",
+            title: "Follow me on Instagram",
+            user_uuid: 1,
+            priority: 0,
+            is_published: false
         }
     ]
 };
