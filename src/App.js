@@ -1,23 +1,22 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
+import LinkItem from "./components/LinkItem";
 import exampleThemeConfigs from "./data/theme_configs.data";
 import exampleUserData from "./data/user.data";
 
 export const App = ({ user: userData = exampleUserData, themeConfigs = exampleThemeConfigs, icons, onClickLink }) => {
     const [LinkStarIcons, setLinkStarIcons] = React.useState(icons);
 
-    console.log(userData);
-
-    useEffect(() => {
-        if (!icons) {
-            const data = lazy(() => import("./components/LinkStarIcons"));
-            setLinkStarIcons(data);
-        }
-    }, [icons]);
+    // useEffect(() => {
+    //     if (!icons) {
+    //         const data = lazy(() => import("./components/LinkStarIcons"));
+    //         setLinkStarIcons(data);
+    //     }
+    // }, [icons]);
 
     return (
         <React.Fragment>
             <Suspense fallback={<div>Loading...</div>}>
-                {userData && LinkStarIcons && (
+                {userData && (
                     <div className="linkstar">
                         <div className="relative w-full h-full">
                             <div className="absolute w-full h-full">
@@ -68,14 +67,14 @@ export const App = ({ user: userData = exampleUserData, themeConfigs = exampleTh
                                             </div>
                                         </div>
                                         <div className="flex-1 px-4 mt-10 md:mt-16 md:px-0">
-                                            {/* {userData.user_links.map(link => (
+                                            {userData.user_links.map(link => (
                                                 <LinkItem
                                                     key={link.uuid}
                                                     link={link}
                                                     icons={LinkStarIcons}
                                                     onClickLink={onClickLink}
                                                 />
-                                            ))} */}
+                                            ))}
                                         </div>
                                     </div>
                                     <div className="mx-auto mt-auto">
