@@ -12,7 +12,7 @@ export const App = ({
 }) => {
     return (
         <React.Fragment>
-            {userData && (
+            {userData && LinkStarIcons && (
                 <div className="linkstar">
                     <div className="relative w-full h-full">
                         <div className="absolute w-full h-full">
