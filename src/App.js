@@ -1,10 +1,11 @@
 import React, { lazy, Suspense, useEffect } from "react";
 import LinkItem from "./components/LinkItem";
+import exampleThemeConfigs from "./data/theme_configs.data";
 import exampleUserData from "./data/user.data";
 
 export const App = ({
     user: userData = exampleUserData,
-    themeConfigs = {},
+    themeConfigs = exampleThemeConfigs,
     icons,
     onClickLink
 }) => {
