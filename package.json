@@ -72,14 +72,6 @@
         "webpack-cli": "^4.9.2",
         "webpack-dev-server": "^3.11.0"
     },
-    "husky": {
-        "hooks": {
-            "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-            "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-            "post-applypatch": "echo \"[Husky] post-applypatch\"",
-            "pre-commit": "echo \"[Husky] pre-commit\""
-        }
-    },
     "config": {
         "commitizen": {
             "path": "./node_modules/git-cz"
