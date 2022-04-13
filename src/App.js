@@ -1,10 +1,12 @@
 import React from "react";
 import LinkItem from "./components/LinkItem";
+import LinkStarIconsLocal from "./components/LinkStarIcons";
+import userData from "./data/user.data";
 
 export const App = ({
-    user,
-    themeConfigs,
-    icons: LinkStarIcons,
+    user = userData,
+    themeConfigs = {},
+    icons: LinkStarIcons = LinkStarIconsLocal,
     onClickLink
 }) => {
     const userLinks = user.user_links;
