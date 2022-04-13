@@ -11,7 +11,7 @@ export const App = ({
 
     return (
         <React.Fragment>
-<div className="linkstar">
+            <div className="linkstar">
                 <div className="relative w-full h-full">
                     <div className="absolute w-full h-full">
                         <img

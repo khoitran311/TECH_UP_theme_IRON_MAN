@@ -1,10 +1,10 @@
 {
-    "name": "@paciolan/remote-component-starter",
-    "version": "1.0.0-semantic-versioning",
-    "description": "Remote Component Starter",
+    "name": "linkstar_theme_starter_kit",
+    "version": "1.0.0",
+    "description": "LinkStar Theme Starter Kit",
     "private": true,
     "browser": "dist/main.js",
-    "author": "Paciolan",
+    "author": "Paciolan (edited by LinkStar)",
     "license": "MIT",
     "scripts": {
         "build": "npm run clean && cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
@@ -12,7 +12,6 @@
         "webpack-dev-server": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server -d --port 9090 --config webpack-dev-server.config.js --open",
         "start": "concurrently -n webpack,webpack-dev-server -c green,cyan \"npm run build:dev -- --watch --verbose\" \"npm run webpack-dev-server\"",
         "clean": "rimraf dist",
-        "cz": "git-cz",
         "test": "echo no tests",
         "test:changed": "npm run test -- --changedSince HEAD",
         "test:coverage": "npm run test -- --coverage",
@@ -52,6 +51,7 @@
         "html-webpack-plugin": "^4.5.0",
         "https-browserify": "^1.0.0",
         "husky": "^7.0.4",
+        "lint-staged": "^12.3.7",
         "postcss": "^8.4.12",
         "postcss-loader": "^6.2.1",
         "postcss-nested": "^5.0.6",
@@ -72,9 +72,10 @@
         "webpack-cli": "^4.9.2",
         "webpack-dev-server": "^3.11.0"
     },
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/git-cz"
-        }
+    "lint-staged": {
+        "**/*.{js,jsx,ts,tsx}": [
+            "eslint . --fix",
+            "prettier --write ."
+        ]
     }
 }
