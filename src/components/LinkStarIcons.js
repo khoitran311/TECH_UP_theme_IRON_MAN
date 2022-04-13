@@ -5,7 +5,11 @@ import { FiFacebook, FiInstagram, FiLinkedin, FiMail, FiTwitter, FiYoutube } fro
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { RiSoundcloudLine, RiTelegramLine } from "react-icons/ri";
 
-const LinkStarIcons = ({ hostname, children, ...anotherProps }) => {
+const LinkStarIcons = props => {
+    if (!props) {
+        return <>LinkStarIcons</>;
+    }
+    const { hostname, children, ...otherProps } = props;
     const icons = {
         facebook: <FiFacebook />,
         youtube: <FiYoutube />,
@@ -19,7 +23,7 @@ const LinkStarIcons = ({ hostname, children, ...anotherProps }) => {
         default: <HiOutlineGlobeAlt />
     };
 
-    return React.cloneElement(icons[hostname] || icons["default"], { ...anotherProps }, children);
+    return React.cloneElement(icons[hostname] || icons["default"], { ...otherProps }, children);
 };
 
 LinkStarIcons.propTypes = {
