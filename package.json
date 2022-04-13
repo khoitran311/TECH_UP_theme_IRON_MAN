@@ -16,7 +16,8 @@
         "test": "echo no tests",
         "test:changed": "npm run test -- --changedSince HEAD",
         "test:coverage": "npm run test -- --coverage",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "prepare": "husky install"
     },
     "dependencies": {
         "react": "^16.14.0"
