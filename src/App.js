@@ -6,6 +6,8 @@ import exampleUserData from "./data/user.data";
 export const App = ({ user: userData = exampleUserData, themeConfigs = exampleThemeConfigs, icons, onClickLink }) => {
     const [LinkStarIcons, setLinkStarIcons] = React.useState(icons);
 
+    console.log(userData);
+
     useEffect(() => {
         if (!icons) {
             const data = lazy(() => import("./components/LinkStarIcons"));
