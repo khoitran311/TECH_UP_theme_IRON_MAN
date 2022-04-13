@@ -1,10 +1,8 @@
 const userData = {
     first_name: "LinkStar",
     last_name: "Demo Theme",
-    avatar_img_absolute:
-        Math.random() > 0.5 ? null : "https://picsum.photos/480/480", // null || string
-    cover_img_absolute:
-        Math.random() > 0.5 ? null : "https://picsum.photos/1920/1080",
+    avatar_img_absolute: Math.random() > 0.5 ? null : "https://picsum.photos/480/480", // null || string
+    cover_img_absolute: Math.random() > 0.5 ? null : "https://picsum.photos/1920/1080",
     username: "linkstar",
     user_links: [
         {
