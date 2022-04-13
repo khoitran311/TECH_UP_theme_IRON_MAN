@@ -2,6 +2,6 @@
  * Entrypoint of the Remote Component.
  */
 import { App } from "./App";
-import "./remote.css";
+import "./index.css";
 
 export default App;
