@@ -1,5 +1,6 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import LinkItem from "./components/LinkItem";
+import ExampleLinkStarIcons from "./components/LinkStarIcons";
 import exampleThemeConfigs from "./data/theme_configs.data";
 import exampleUserData from "./data/user.data";
 
@@ -8,8 +9,7 @@ export const App = ({ user: userData = exampleUserData, themeConfigs = exampleTh
 
     useEffect(() => {
         if (!icons) {
-            const data = lazy(() => import("./components/LinkStarIcons"));
-            setLinkStarIcons(data);
+            setLinkStarIcons(ExampleLinkStarIcons);
         }
     }, [icons]);
 
