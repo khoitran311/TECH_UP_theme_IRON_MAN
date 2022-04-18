@@ -31,11 +31,11 @@ export const App = ({
                             <div className="relative z-10 flex flex-col h-full text-stone-700">
                                 <div>
                                     {userData.cover_img_absolute ? (
-                                        <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 mx-auto sm:px-6 lg:px-8 xl:px-36">
+                                        <div className="w-full aspect-[5/2] sm:aspect-[4] xl:aspect-[5/1] px-3 pt-3 mx-auto sm:px-6 sm:pt-6 lg:px-8 lg:pt-8 xl:px-36 xl:py-0">
                                             <img
                                                 src={userData.cover_img_absolute}
                                                 alt={`${userData.username}'s cover`}
-                                                className="object-cover object-center w-full h-full bg-gray-100 shadow-md rounded-b-2xl shadow-black/10"
+                                                className="object-cover object-center w-full h-full bg-gray-100 shadow-md rounded-2xl shadow-black/10 xl:rounded-t-none"
                                             />
                                         </div>
                                     ) : (
@@ -43,7 +43,7 @@ export const App = ({
                                     )}
                                 </div>
                                 <div className="w-full max-w-screen-sm mx-auto mb-6 -mt-14 md:-mt-[3.75rem]">
-                                    <div className="mt-2.5 sm:mt-1 rounded-3xl md:mt-0">
+                                    <div className="mt-3 sm:mt-1 rounded-3xl md:mt-0">
                                         <div
                                             className={`w-20 h-20 sm:w-24 md:w-28 sm:h-24 md:h-28 mx-auto overflow-hidden border-4 shadow-md border-white rounded-full bg-white ${
                                                 !userData.avatar_img_absolute && "p-4"
@@ -74,7 +74,7 @@ export const App = ({
                                     </div>
                                 </div>
                                 <div className="mx-auto mt-auto">
-                                    <div className="flex flex-col items-center w-full pb-8 mx-auto mt-6">
+                                    <div className="flex flex-col items-center w-full pb-8 mx-auto mt-10">
                                         <div className="mb-1 text-sm font-semibold">Powered By</div>
                                         <img src={themeConfigs?.linkstar_logo} alt="LinkStar" className="h-10" />
                                         <div className="mt-1 text-sm font-semibold">
