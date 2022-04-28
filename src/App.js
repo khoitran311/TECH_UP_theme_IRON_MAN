@@ -14,7 +14,7 @@ export const App = ({
         <React.Fragment>
             {userData && LinkStarIcons && (
                 <div className="linkstar">
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full group">
                         <div className="absolute w-full h-full">
                             <img
                                 src={
@@ -23,11 +23,11 @@ export const App = ({
                                     userData.avatar_img_absolute ||
                                     themeConfigs?.default_avatar
                                 }
-                                className="object-cover object-center w-full h-full"
+                                className="object-cover object-center  w-full h-full"
                                 alt={userData.username}
                             />
                         </div>
-                        <div className="relative grid min-h-full backdrop-blur-2xl bg-white/30">
+                        <div className="relative grid min-h-full backdrop-blur-2xl bg-cover bg-[url('https://w0.peakpx.com/wallpaper/465/459/HD-wallpaper-iron-man-minimalism-iron-man-minimalism-artist-artwork-behance-superheroes.jpg')]">
                             <div className="relative z-10 flex flex-col h-full text-stone-700">
                                 <div>
                                     {userData.cover_img_absolute ? (
@@ -43,9 +43,9 @@ export const App = ({
                                     )}
                                 </div>
                                 <div className="w-full max-w-screen-sm mx-auto mb-6 -mt-14 md:-mt-[3.75rem]">
-                                    <div className="mt-3 sm:mt-1 rounded-3xl md:mt-0">
+                                    <div className="mt-3 sm:mt-1 rounded-3xl z-50 md:mt-0 relative">
                                         <div
-                                            className={`w-20 h-20 sm:w-24 md:w-28 sm:h-24 md:h-28 mx-auto overflow-hidden border-4 shadow-md border-white rounded-full bg-white ${
+                                            className={`w-20 h-20 sm:w-24  md:w-28 sm:h-24 md:h-28 mx-auto overflow-hidden border-4 shadow-md   rounded-full bg-white ${
                                                 !userData.avatar_img_absolute && "p-4"
                                             }`}
                                         >
@@ -55,14 +55,18 @@ export const App = ({
                                                 alt={userData.username}
                                             />
                                         </div>
-                                        <div className="mt-6 font-semibold text-center text-black md:text-lg">
-                                            <div>
+                                        <div className="w-44 h-44 rounded-full  absolute z-10 top-[-32px] left-[36.5%]">
+                                            <div className="w-full h-full rounded-full  border-[18px] border-dashed border-white"></div>
+                                        </div>
+
+                                        <div className="mt-6 font-semibold text-center text-white  md:text-lg">
+                                            <div className="drop-shadow-md">
                                                 {userData.first_name} {userData.last_name}
                                             </div>
-                                            <div className="mt-1">@{userData.username}</div>
+                                            <div className="mt-1 drop-shadow-md">@{userData.username}</div>
                                         </div>
                                     </div>
-                                    <div className="flex-1 px-4 mt-10 md:mt-16 md:px-0">
+                                    <div className="flex-1 px-4 mt-10  md:mt-16 md:px-0">
                                         {userData.user_links.map(link => (
                                             <LinkItem
                                                 key={link.uuid}
@@ -74,7 +78,7 @@ export const App = ({
                                     </div>
                                 </div>
                                 <div className="mx-auto mt-auto">
-                                    <div className="flex flex-col items-center w-full pb-8 mx-auto mt-10">
+                                    <div className="flex flex-col items-center text-white w-full pb-8 mx-auto mt-10">
                                         <div className="mb-1 text-sm font-semibold">Powered By</div>
                                         <img src={themeConfigs?.linkstar_logo} alt="LinkStar" className="h-10" />
                                         <div className="mt-1 text-sm font-semibold">
